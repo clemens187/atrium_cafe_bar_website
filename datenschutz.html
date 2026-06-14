@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- SEITE: Ändere den Titel je nach Verwendung -->
+<title>Datenschutz – ATRIUM Cafe Bar</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF8F0;
+    --cream-deep:#FBEDD9;
+    --ink:#3A2E26;
+    --glow:#E8A85C;
+    --terracotta:#C75D3F;
+    --mocha:#8A6F5E;
+    --glow-light:#F4D9A8;
+    --max-w:480px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Karla',sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    min-height:100vh;
+  }
+
+  /* ---------- TYPOGRAPHY ---------- */
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'Karla',sans-serif;
+    font-size:0.78rem;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--terracotta);
+    font-weight:700;
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:0 22px;
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,248,240,0.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(58,46,38,0.08);
+    padding:16px 0;
+  }
+  header .wrap{
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .back-btn{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:0.84rem;
+    font-weight:600;
+    color:var(--mocha);
+    text-decoration:none;
+    padding:8px 0;
+    transition:color 0.2s;
+    flex-shrink:0;
+  }
+  .back-btn:active{ color:var(--terracotta); }
+  .header-title{
+    font-family:'Fraunces',serif;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--ink);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+
+  /* ---------- PAGE HERO ---------- */
+  .page-hero{
+    padding:52px 0 40px;
+    background:linear-gradient(to bottom, var(--cream-deep), var(--cream));
+    border-bottom:1px solid rgba(58,46,38,0.06);
+  }
+  .page-hero .eyebrow{ margin-bottom:10px; display:block; }
+  .page-hero h1{
+    font-size:clamp(2rem,9vw,2.6rem);
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .page-hero p.subtitle{
+    font-size:0.92rem;
+    color:rgba(58,46,38,0.6);
+    line-height:1.55;
+  }
+
+  /* ---------- CONTENT AREA ---------- */
+  .content{
+    padding:44px 0 72px;
+  }
+
+  /* Haupt-Abschnitt (z.B. § 1, Abschnitt 1 ...) */
+  .legal-section{
+    margin-bottom:44px;
+  }
+  .legal-section:last-child{
+    margin-bottom:0;
+  }
+  .legal-section > h2{
+    font-size:1.35rem;
+    color:var(--ink);
+    margin-bottom:14px;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(58,46,38,0.1);
+  }
+  .legal-section > h3{
+    font-size:1.05rem;
+    color:var(--ink);
+    margin-top:22px;
+    margin-bottom:8px;
+  }
+
+  /* Lauftext */
+  .legal-section p{
+    font-size:0.95rem;
+    line-height:1.7;
+    color:rgba(58,46,38,0.82);
+    margin-bottom:12px;
+  }
+  .legal-section p:last-child{ margin-bottom:0; }
+
+  /* Highlight-Box (z.B. für Kontaktdaten, wichtige Infos) */
+  .info-box{
+    background:var(--cream-deep);
+    border-left:3px solid var(--glow);
+    border-radius:0 12px 12px 0;
+    padding:16px 18px;
+    margin:16px 0;
+    font-size:0.93rem;
+    line-height:1.65;
+    color:var(--ink);
+  }
+  .info-box strong{
+    display:block;
+    font-weight:700;
+    margin-bottom:4px;
+    color:var(--ink);
+  }
+  .info-box a{
+    color:var(--terracotta);
+    text-decoration:none;
+  }
+
+  /* Einfache Liste */
+  .legal-section ul, .legal-section ol{
+    padding-left:18px;
+    margin:10px 0 12px;
+  }
+  .legal-section li{
+    font-size:0.95rem;
+    line-height:1.65;
+    color:rgba(58,46,38,0.82);
+    margin-bottom:6px;
+  }
+
+  /* Trennlinie */
+  .divider{
+    border:none;
+    border-top:1px solid rgba(58,46,38,0.1);
+    margin:36px 0;
+  }
+
+  /* Inhaltsverzeichnis / Sprungmarken (optional) */
+  .toc{
+    background:var(--cream-deep);
+    border-radius:14px;
+    padding:20px;
+    margin-bottom:36px;
+  }
+  .toc p.toc-label{
+    font-size:0.75rem;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--mocha);
+    margin-bottom:12px;
+  }
+  .toc ol{
+    padding-left:18px;
+    margin:0;
+  }
+  .toc li{
+    margin-bottom:6px;
+  }
+  .toc a{
+    font-size:0.92rem;
+    color:var(--terracotta);
+    text-decoration:none;
+    line-height:1.5;
+  }
+
+  /* Stand-Hinweis am Ende */
+  .legal-meta{
+    margin-top:48px;
+    padding-top:20px;
+    border-top:1px solid rgba(58,46,38,0.08);
+    font-size:0.8rem;
+    color:rgba(58,46,38,0.45);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--cream-deep);
+    border-top:1px solid rgba(58,46,38,0.08);
+    padding:28px 0;
+    text-align:center;
+  }
+  .footer-logo{
+    font-family:'Fraunces',serif;
+    font-size:1.2rem;
+    font-weight:700;
+    color:var(--ink);
+    text-decoration:none;
+    display:inline-block;
+    margin-bottom:8px;
+  }
+  .footer-logo span{ color:var(--glow); }
+  footer p{
+    font-size:0.8rem;
+    color:rgba(58,46,38,0.45);
+    line-height:1.6;
+  }
+  footer a{
+    color:rgba(58,46,38,0.55);
+    text-decoration:underline;
+  }
+
+  @media (min-width:600px){
+    :root{ --max-w:680px; }
+  }
+  @media (min-width:900px){
+    :root{ --max-w:780px; }
+  }
+
+  a:focus-visible{
+    outline:2px solid var(--terracotta);
+    outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap">
+    <a href="index.html" class="back-btn" aria-label="Zurück zur Startseite">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      Zurück
+    </a>
+    <!-- SEITE: Ändere den Titel in der Kopfzeile -->
+    <span class="header-title">Datenschutz</span>
+  </div>
+</header>
+
+<!-- PAGE INTRO -->
+<div class="page-hero">
+  <div class="wrap">
+    <!-- SEITE: Ändere Eyebrow und Hauptüberschrift -->
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Datenschutz</h1>
+    <p class="subtitle">Angaben laut DSGVO</p>
+  </div>
+</div>
+
+<!-- HAUPTINHALT -->
+<main class="content">
+  <div class="wrap">
+
+    <!-- OPTIONAL: Inhaltsverzeichnis – einfach löschen wenn nicht benötigt -->
+    <nav class="toc" aria-label="Inhaltsverzeichnis">
+      <p class="toc-label">Inhalt</p>
+      <ol>
+        <li><a href="#verantwortlichestelle">Verantwortliche Stelle</a></li>
+        <li><a href="#datenerhebung">Erhebung und Verwendung Ihrer Daten</a></li>
+        <li><a href="#datensicherheit">Datensicherheit</a></li>
+        <li><a href="#externelinks">Externe Links</a></li>
+        <li><a href="#ihrerechte">Ihre Rechte</a></li>
+        <li><a href="#aenderungen">Änderungen der Datenschutzerklärung</a></li>
+      </ol>
+    </nav>
+
+    <!-- =====================================================
+         ABSCHNITT 1 – BETREIBER & KONTAKT
+         ===================================================== -->
+    <section class="legal-section" id="verantwortlichestelle">
+      <h2>Verantwortliche Stelle</h2>
+
+      <div class="info-box">
+        <strong>ATRIUM Cafe Bar</strong>
+        <!-- INHALT: Tragt hier eure tatsächlichen Daten ein -->
+        Birgit Kastner-Kaufmann / Atrium Cafe Bar e.U.<br>
+        Neuer Markt 18<br>
+        3910 Zwettl, Österreich<br>
+        <br>
+        <a href="tel:+43282220469">+43 2822 20469</a><br>
+        <a href="mailto:mail@AtriumCafeBar.at">mail@AtriumCafeBar.at</a>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ABSCHNITT 2 – RECHTLICHE HINWEISE
+         ===================================================== -->
+    <section class="legal-section" id="datenerhebung">
+      <h2>Erhebung und Verwendung Ihrer Daten</h2>
+      <p>
+        Automatisch erhobene Informationen und Speicherfrist: Beim Besuch unserer Website werden automatisch bestimmte Informationen erfasst, wie zum Beispiel Ihre IP-Adresse, Browsertyp, Datum und Uhrzeit des Zugriffs, besuchte Seiten und verweisende Website-Adressen. Diese Informationen werden ausschließlich für statistische Auswertungen und zur Verbesserung unserer Website genutzt. Wir möchten darauf hinweisen, dass diese bestimmten Informationen für einen Zeitraum von vier Wochen gespeichert werden. Eine Zuordnung zu einer bestimmten Person ist uns dabei nicht möglich.
+      </p>
+    </section>
+
+    <!-- =====================================================
+         ABSCHNITT 3 – HAFTUNGSAUSSCHLUSS
+         ===================================================== -->
+    <section class="legal-section" id="datensicherheit">
+      <h2>Datensicherheit</h2>
+
+      <p>Wir treffen angemessene technische und organisatorische Maßnahmen, um Ihre Daten gegen unbefugten Zugriff, Verlust oder Zerstörung zu schützen. Dennoch können wir keine absolute Sicherheit garantieren.
+      </p>
+    </section>
+
+    <section class="legal-section" id="externelinks">
+      <h2>Externe Links</h2>
+
+      <p>Unsere Website kann Links zu anderen Websites enthalten, auf die diese Datenschutzerklärung nicht anwendbar ist. Wir empfehlen Ihnen, die Datenschutzerklärungen der verlinkten Websites zu lesen, um sich über deren Umgang mit personenbezogenen Daten zu informieren.</p>
+    </section>
+
+    <section class="legal-section" id="ihrerechte">
+      <h2>Ihre Rechte</h2>
+
+      <p>Sie haben das Recht, Auskunft über die von uns über Sie gespeicherten Daten zu erhalten. Sie können jederzeit die Berichtigung, Löschung oder Sperrung Ihrer Daten verlangen. Bitte kontaktieren Sie uns hierfür unter den oben genannten Kontaktdaten.</p>
+    </section>
+
+    <section class="legal-section" id="aenderungen">
+      <h2>Änderungen der Datenschutzerklärung</h2>
+
+      <p>Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit zu ändern. Die aktuelle Version ist auf unserer Website verfügbar.</p>
+    </section>
+
+    <p class="legal-meta">Stand: Juni 2026</p>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a href="index.html" class="footer-logo">ATRIUM<span>.</span></a>
+    <p>
+      Neuer Markt 18, 3910 Zwettl &nbsp;·&nbsp;
+      <a href="index.html">Startseite</a> &nbsp;·&nbsp;
+      <a href="impressum.html">Impressum</a> &nbsp;·&nbsp;
+      <a href="datenschutz.html">Datenschutz</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

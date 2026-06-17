@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ATRIUM Cafe Bar – Zwettls Wohnzimmer</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <meta name="description" content="Das ATRIUM ist der gemütlichste Ort in Zwettl. Cafe, Bar, Treffpunkt – ein Ort zum Wohlfühlen.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +27,7 @@
   <div class="wrap hero-content">
     <span class="eyebrow">Neuer Markt 18, Zwettl</span>
     <h1>Der Treffpunkt in<br><em>Zwettl.</em></h1>
-    <p>Raus aus dem Alltag, rein in die Cafe Bar. Eine Tasse Kaffee, ein gutes Glas Wein, gute Gespräche und das Gefühl, genau richtig zu sein.</p>
+    <p>Raus aus dem Alltag, rein in die Cafe Bar. Eine Tasse Kaffee, ein gutes Glas Wein, angenehme Gespräche und das Gefühl, genau richtig zu sein.</p>
     <div class="hero-actions">
       <a href="#info" class="btn btn-primary">Öffnungszeiten</a>
       <a href="https://maps.app.goo.gl/k5fQPanVArkznnJS8" target="_blank" rel="noopener" class="btn btn-ghost">Anfahrt</a>
@@ -102,22 +103,29 @@
   <div class="wrap">
     <div class="jobs-card">
       <span class="eyebrow">Wir suchen Verstärkung</span>
-      <h2>Lust auf einen<br>coolen Nebenjob?</h2>
-      <p>Für Schüler:innen und Studierende: Wir suchen laufend Aushilfen für Service und Bar, ideal neben Schule oder Studium. Du bringst gute Laune mit, wir bringen dir den Rest bei.</p>
+      <h2>Lust auf einen<br>Nebenjob?</h2>
+      <p>Wir suchen laufend Aushilfen für den Service in der Bar und im Atrium Club. Egal ob Schüler:in, Student:in, Berufstätige:r oder einfach auf der Suche nach einem flexiblen Nebenjob , bei uns bist du willkommen. Du bringst gute Laune mit, wir zeigen dir den Rest.</p>
+      <p><strong>Wir bieten:</strong></p>
       <ul class="jobs-list">
         <li>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>Flexible Schichten: Passend zu Schule, Uni oder Ferien</span>
+          <span>Flexible Arbeitszeiten: Passend zu deiner Ausbildung</span>
         </li>
         <li>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>Faires Trinkgeld &amp; lockeres Team</span>
+          <span>Beschäftigung auf Stundenbasis: je nach Verfügbarkeit und Bedarf</span>
         </li>
         <li>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>Keine Vorerfahrung nötig: Wir zeigen dir alles</span>
+          <span>Faires Trinkgeld &amp; motiviertes Team</span>
+        </li>
+        <li>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Vorerfahrung von Vorteil, aber keine Vorraussetzung: Wir zeigen dir alles</span>
         </li>
       </ul>
+      <p><strong>Interesse?</strong></p>
+      <p>Schreib uns einfach eine kurze Nachricht und wir melden uns bei dir. Wir freuen uns darauf, dich kennenzulernen!</p>
       <a href="https://wa.me/43282220469" target="_blank" class="btn btn-primary">Jetzt bewerben</a>
     </div>
   </div>
@@ -158,6 +166,19 @@
 </footer>
 
 <script>
+  // Shrink header + move logo to the left after scrolling down
+  const header = document.querySelector('header');
+  const SCROLL_THRESHOLD = 40;
+  function updateHeaderState(){
+    if (window.scrollY > SCROLL_THRESHOLD) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  updateHeaderState();
+  window.addEventListener('scroll', updateHeaderState, { passive: true });
+
   // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const io = new IntersectionObserver((entries) => {
